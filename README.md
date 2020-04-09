@@ -18,7 +18,7 @@ docker build -t . zoombo
 
 # Formats
 
-### meetings.txt
+### meeting-share-links.txt
 
 ```
 https://{org}.zoom.us/rec/share/{id}
@@ -28,7 +28,7 @@ https://{org}.zoom.us/rec/share/{id}
 
 Note that the `{org}` info is just an example of what the target org could be. Then the `{id}` is the 54-character share token.
 
-### rockyou.txt
+### passwords.txt
 
 ```
 line
@@ -37,8 +37,14 @@ password
 list
 ```
 
+# Example Usage
 
-# Usage
+```
+python3 zoombo.py -m meetings.txt -w rockyou.txt
+```
+
+
+# Help output
 
 ```
 $ python3 zoombo.py -h
@@ -54,3 +60,5 @@ optional arguments:
                         rockyou.txt
 
 ```
+
+
