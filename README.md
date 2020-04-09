@@ -4,6 +4,38 @@
 # What is Zoombo?
 It's a Zoom meeting cloud-share brute force cracker and automatic video file downloader. 
 
+# Installaton
+
+## Option 1
+```
+pip3 install -r requirements.txt
+```
+
+## Option 2 (pending updates)
+```
+docker build -t . zoombo
+```
+
+# Formats
+
+## meetings.txt
+
+```
+https://{org}.zoom.us/rec/share/{id}
+https://{org}.zoom.us/rec/share/{id}
+https://{org}.zoom.us/rec/share/{id}
+```
+
+## rockyou.txt
+
+```
+line
+separated
+password
+list
+```
+
+
 # Usage
 
 ```
