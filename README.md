@@ -3,14 +3,14 @@
 
 # Disclaimer
 
-Not responsible for misuse.
+Not responsible for misuse. Please don't be an asshole.
 
 # What is Zoombo?
 It's a Zoom meeting cloud-share brute force cracker and automatic video file downloader. 
 
-## What are some use-cases for Zoombo?
+### What are some use-cases for Zoombo?
 
-- When acquiring Slack tokens in Red Team engagements, or gaining access to a user's slack instance. You can then search for `zoom.us/rec/share` or `zoom.us/rec/play` links and then, if they're password-protected, brute-force access. 
+- When acquiring Slack tokens in Red Team engagements, or gaining access to a user's slack instance, you can then search for `zoom.us/rec/share` or `zoom.us/rec/play` links and then, if they're password-protected, brute-force access. 
 - When finding a password-protected Zoom share during pentests, you'll want to be able to brute force the share. 
 
 
