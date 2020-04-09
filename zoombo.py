@@ -131,17 +131,21 @@ class Zoombo:
             video_url = self.get_video_url_from_source_code(soup)
 
             # Step 3 - Get raw binary mp4 data from Play URL
-            data_request = requests.get(video_url, cookies=play_request.cookies.get_dict(), headers=self.headers)
 
-            if data_request.status_code == 200 and video_url:
-                filename = data_request.url.split('?')[0].split('/')[-1]
-                self.c_print(f"[!] Found file: {filename}")
-                with open(filename, "wb") as file:
-                    file.write(data_request.content)
-                    self.c_print(f"[!] Saved {filename} to disk")
+            if video_url:
+                data_request = requests.get(video_url, cookies=play_request.cookies.get_dict(), headers=self.headers)
 
+                if data_request.status_code == 200 and video_url:
+                    filename = data_request.url.split('?')[0].split('/')[-1]
+                    self.c_print(f"[!] Found file: {filename}")
+                    with open(filename, "wb") as file:
+                        file.write(data_request.content)
+                        self.c_print(f"[!] Saved {filename} to disk")
+
+                else:
+                    self.c_print(f"[?] Can't access file")
             else:
-                self.c_print(f"[?] Can't access file")
+                self.c_print(f"[?] Failed to get URL")
         else:
             self.c_print(f"[?] Password failed; {password}")
 

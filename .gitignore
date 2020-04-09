@@ -4,3 +4,5 @@
 .env
 venv/*
 venv
+*.mp4
+
