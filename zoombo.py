@@ -145,7 +145,7 @@ class Zoombo:
                 print(f"Video url: {video_url}")
                 print(f"Soup: {soup}")
 
-                self.c_print(f"[?] Failed to get URL")
+                self.c_print(f"[--] Failed to Brute Force URL")
         else:
             self.c_print(f"[?] Password failed; {password}")
 
