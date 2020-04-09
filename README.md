@@ -6,19 +6,19 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 
 # Installaton
 
-## Option 1
+### Option 1
 ```
 pip3 install -r requirements.txt
 ```
 
-## Option 2 (pending updates)
+### Option 2 (pending updates)
 ```
 docker build -t . zoombo
 ```
 
 # Formats
 
-## meetings.txt
+### meetings.txt
 
 ```
 https://{org}.zoom.us/rec/share/{id}
@@ -28,7 +28,7 @@ https://{org}.zoom.us/rec/share/{id}
 
 Note that the `{org}` info is just an example of what the target org could be. Then the `{id}` is the 54-character share token.
 
-## rockyou.txt
+### rockyou.txt
 
 ```
 line
