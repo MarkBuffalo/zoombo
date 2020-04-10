@@ -15,7 +15,7 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 
 ### How many meetings can it crack?
 
-- I've purposely not included any threading or optimization, but you can crack as many links as you can dump into `meetings.txt`
+- I've purposely not included any threading or optimization, but you can crack as many links as you can dump into `meetings.txt`. That means if you've got 20 links, run it and go afk. 
 
 
 # Installaton
