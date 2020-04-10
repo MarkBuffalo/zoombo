@@ -17,10 +17,14 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 
 - I've purposely not included any threading or optimization, but you can crack as many links as you can dump into `meetings.txt`. That means if you've got 20 links, run it and go afk. 
 
+# Mitigation
+
 ### Are there any mitigations for this attack that we can use before Zoom fixes it?
 
+There are a couple options you can take to defend yourself right now. 
+
 1. Use authenticated shares instead of passwords. Lock it down to SSO with Multi-Factor Authentication requirements.
-2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links and prevents others from getting a new link easily.
+2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links and prevents others from getting a new link easily. However, the video appears to persist in the bucket regardless; you just won't have the appropriate `Signature` so you can't access it. 
 
 # Installaton
 
