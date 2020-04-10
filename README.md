@@ -19,8 +19,8 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 
 ### Are there any mitigations for this attack that we can use before Zoom fixes it?
 
-1. Use authenticated shares instead of passwords
-2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links.
+1. Use authenticated shares instead of passwords. Lock it down to SSO with Multi-Factor Authentication requirements.
+2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links and prevents others from getting a new link easily.
 
 # Installaton
 
