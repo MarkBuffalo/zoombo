@@ -28,7 +28,7 @@ docker build -t . zoombo
 
 # Formats
 
-### meeting-share-links.txt
+### meetings.txt
 
 ```
 https://{org}.zoom.us/rec/share/{id}
