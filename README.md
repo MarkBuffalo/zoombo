@@ -24,7 +24,7 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 There are a couple options you can take to defend yourself right now. 
 
 1. Use authenticated shares instead of passwords. Lock it down to SSO with Multi-Factor Authentication requirements.
-2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links and prevents others from getting a new link easily. However, the video appears to persist in the bucket regardless; you just won't have the appropriate `Signature` so you can't access it. 
+2. Set a random password for recorded shares that you no longer want, then delete it. This kills the previous S3 bucket links and prevents others from getting a new link easily. However, the video appears to persist in the bucket for 3-4 hours, similar to a normal video; you just won't have the appropriate `Signature` so you can't access it. 
 
 # Installaton
 
