@@ -18,11 +18,11 @@ class Zoombo:
         # https://{company}.zoom.us/rec/share/{id}
         # https://{company}.zoom.us/rec/share/{id2}
         self.parser.add_argument("-m", "--meetings", required=True,
-                                 help="A list of recording URLs to crack. e.g.: --meeting-list company-a.txt")
+                                 help="A list of recording URLs to crack. e.g.: --meetings company-a.txt")
 
         # This is for a password-based wordlist.
         self.parser.add_argument("-w", "--wordlist", required=True,
-                                 help="Any wordlist with passwords. e.g.: --word-list rockyou.txt")
+                                 help="Any wordlist with passwords. e.g.: --wordlist rockyou.txt")
         self.args = self.parser.parse_args()
 
         # Colors. No leet program is complete without colors to spice things up.
