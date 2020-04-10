@@ -13,6 +13,10 @@ It's a Zoom meeting cloud-share brute force cracker and automatic video file dow
 - When acquiring Slack tokens during Red Team engagements, or gaining access to a user's slack instance, you can then search for `zoom.us/rec/share` or `zoom.us/rec/play` links and then, if they're password-protected, brute-force access. 
 - When finding a password-protected Zoom share during pentests, you'll want to be able to brute force the share. 
 
+### How many meetings can it crack?
+
+- I've purposely not included any threading or optimization, but you can crack as many links as you can dump into `meetings.txt`
+
 
 # Installaton
 
