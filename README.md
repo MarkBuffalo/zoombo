@@ -36,7 +36,7 @@ https://{org}.zoom.us/rec/share/{id}
 https://{org}.zoom.us/rec/share/{id}
 ```
 
-Note that the `{org}` info is just an example of what the target org could be. Then the `{id}` is the 54-character share token.
+Note that the `{org}` info is just an example of what the target org could be, e.g.: `zoomorg`. Then the `{id}` is the 54-character share token at the end of the URL.
 
 ### passwords.txt
 
