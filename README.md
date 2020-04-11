@@ -1,3 +1,6 @@
+# UPDATE
+
+### Zoom has fixed this vulnerability quickly. This project is now defunct.
 
 ![Terminal Screenshot](https://i.imgur.com/4psD58C.png)
 
