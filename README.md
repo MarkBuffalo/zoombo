@@ -1,6 +1,8 @@
-# UPDATE
+# UPDATE - 4/11/20
 
-### Zoom has fixed this vulnerability quickly. This project is now defunct.
+### Zoom has fixed this vulnerability quickly. 
+
+This project is now defunct. Code has been updated to alert you that it's not working because of captcha.
 
 ![Terminal Screenshot](https://i.imgur.com/4psD58C.png)
 
