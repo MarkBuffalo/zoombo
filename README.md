@@ -2,7 +2,7 @@
 
 ### Zoom has fixed this vulnerability quickly. 
 
-This project is now defunct. Code has been updated to alert you that it's not working because of captcha. If captcha is ever removed, Zoombo will once again work. 
+This project is now defunct. Code has been updated to alert you that it's not working because of captcha. If captcha is ever removed, Zoombo will once again work. Zoombo might still work before captcha kicks in if you get lucky.
 
 ![Terminal Screenshot](https://i.imgur.com/4psD58C.png)
 
