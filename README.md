@@ -40,7 +40,7 @@ pip3 install -r requirements.txt
 
 ### Option 2 (pending updates)
 ```
-docker build -t . zoombo
+docker build -t zoombo .
 ```
 
 # Formats
